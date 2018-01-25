@@ -48,10 +48,10 @@ class Dtlp extends CI_Controller{
             $this->session->set_flashdata('warning', 'Tambah data belum dilakukan');
             redirect('dtlp');
         }
-        $no_kk = $this->input->post('no_kk');
-		$nik = $this->input->post('nik');
-		$cek_kode_kk = $this->model->GetDtlp("where no_kk = '$no_kk'")->num_rows();
-		$cek_kode_nik = $this->model->GetDtlp("where nik = '$nik'")->num_rows();
+			$no_kk = $this->input->post('no_kk');
+			$nik = $this->input->post('nik');
+			$cek_kode_kk = $this->model->GetDtlp("where no_kk = '$no_kk'")->num_rows();
+			$cek_kode_nik = $this->model->GetDtlp("where nik = '$nik'")->num_rows();
         if ($cek_kode_kk > 0){
             $this->session->set_flashdata('warning', 'No KK sudah ada');
             redirect('dtlp');
